@@ -3,6 +3,7 @@ EventFrame:RegisterEvent("PLAYER_ENTERING_WORLD")
 EventFrame:RegisterEvent("PLAYER_LEAVING_WORLD")
 EventFrame:RegisterEvent("TIME_PLAYED_MSG")
 
+
 local function saveInLocalVariable(realm,playerGUID,class,name,time)
     if PlayedTotal == nil then 
         PlayedTotal = {}
@@ -17,7 +18,7 @@ local function saveInLocalVariable(realm,playerGUID,class,name,time)
     PlayedTotal[realm][playerGUID].time = time
     PlayedTotal[realm][playerGUID].lastregistered = C_DateAndTime.GetCurrentCalendarTime()
     PlayedTotal[realm][playerGUID].class = class
-    print("Playeded - Nouveau temps de jeu enregistré pour ce personnage.")
+    print(GetLocalizedText("NEW_TIME_PLAYED_MSG"))
 end
 
 EventFrame:SetScript("OnEvent", function(self, event, ...)

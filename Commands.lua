@@ -22,18 +22,42 @@ local function secondsToTime(seconds)
     h = (seconds % 86400) / 3600;
     m = (seconds % 86400  % 3600) / 60;
     s =  seconds % 86400  % 3600  % 60;
-    if d >= 1 then return ("%d jours, %d heures, %d minutes, %d secondes"):format(d,h,m,s); end;
-    if h >= 1 then return (     "%d heures, %d minutes, %d secondes"):format(  h,m,s); end;
-    if m >= 1 then return (          "%d minutes %d secondes"):format(    m,s); end;
-    if s >= 1 then return (                     "%d secondes"):format(      s); end;
-    return s;
+
+    local parts = {}
+
+    if d == 1 then
+        table.insert(parts, ("%d "):format(d)..GetLocalizedText("DAY"))
+    end
+    if d >= 1 then
+        table.insert(parts, ("%d "):format(d)..GetLocalizedText("DAYS"))
+    end
+    if h == 1 then
+        table.insert(parts, ("%d "):format(h)..GetLocalizedText("HOUR"))
+    end
+    if h >= 1 then
+        table.insert(parts, ("%d "):format(h)..GetLocalizedText("HOURS"))
+    end
+    if m == 1 then
+        table.insert(parts, ("%d "):format(m)..GetLocalizedText("MINUTE"))
+    end
+    if m >= 1 then
+        table.insert(parts, ("%d "):format(m)..GetLocalizedText("MINUTES"))
+    end
+    if s == 1 then
+        table.insert(parts, ("%d "):format(s)..GetLocalizedText("SECOND"))
+    end
+    if s >= 1 then
+        table.insert(parts, ("%d "):format(s)..GetLocalizedText("SECONDS"))
+    end
+
+    return table.concat(parts, ", ")
 end
 
 local function helpCommand()
-    print("Commandes acceptées par Playeded :")
-        print("/playeded all - Affiche le temps de jeu total.")
-        print("/playeded server - Affiche le temps de jeu sur ce serveur.")
-        print("/playeded resetAll - Réinitialise le temps de jeu total.")
+    print(GetLocalizedText("ACCEPTED_COMMANDS_MSG"))
+        print("/playeded all - "..GetLocalizedText("INFO_ALL_COMMAND_MSG"))
+        print("/playeded server - "..GetLocalizedText("INFO_SERVER_COMMAND_MSG"))
+        print("/playeded resetAll - "..GetLocalizedText("INFO_RESETALL_COMMAND_MSG"))
 --      print("/playeded resetCurrent - Supprime le temps de jeu enregistré pour ce personnage.")
 --      print("/playeded resetServer - Réinitialise le temps de jeu enregistré pour ce serveur.")
 end
@@ -42,7 +66,7 @@ local function getPlayedTime(param)
     local totalTime = 0
     for server, characters in pairs(PlayedTotal) do
         if param == "all" or GetRealmName() == server then
-            print(WrapTextInColorCode("Serveur : " .. server, "FFB5FFEB"))
+            print(WrapTextInColorCode(GetLocalizedText("SERVER").." : " .. server, "FFB5FFEB"))
             for characterID,datas in sortAscendant(characters, function(t,a,b) return t[b].time < t[a].time end) do
             local color = C_ClassColor.GetClassColor(datas.class)
             print("-> " .. WrapTextInColorCode(datas.name, color:GenerateHexColor()) .. " - " .. secondsToTime(datas.time) .. ".")
@@ -50,13 +74,19 @@ local function getPlayedTime(param)
             end
         end
     end
-    print(WrapTextInColorCode("Vous avez joué " .. secondsToTime(totalTime) .. " sur " .. (param=="all" and "ce compte" or "le serveur "..GetRealmName()) ..".", "ffffff00"))
-end
+    print(WrapTextInColorCode(
+        (param == "all" and 
+            GetLocalizedText("OVERALL_PLAYEDTIME_DISPLAY_MSG"):format(secondsToTime(totalTime)) 
+        or 
+            GetLocalizedText("SERVER_PLAYEDTIME_DISPLAY_MSG"):format(secondsToTime(totalTime), GetRealmName())
+        ), 
+        "ffffff00"
+    ))end
 
 local function deletePlayedTime(param)
     if param == "all" then
         PlayedTotal = {}
-        print("Payeded - Tous les temps de jeux ont été réinitialisés.")
+        print("Playeded - "..GetLocalizedText("RESETALL_CONFIRMATION_MSG"))
     end
 end
 
