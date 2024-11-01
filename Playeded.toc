@@ -1,7 +1,7 @@
-## Interface: 100002
+## Interface: 110005
 ## Title: Playeded by RAZhkoh
-## Notes: Mon premier addon de test.
-## Version: 0.1
+## Notes: Addmon pour savoir le temps de jeu total sur votre compte.
+## Version: 1.0
 ## SavedVariables: PlayedTotal 
 
 Playeded.lua
