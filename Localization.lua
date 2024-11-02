@@ -214,6 +214,5 @@ LocalizationTable = {
 
 
 function GetLocalizedText(key)
-    print(locale)
     return LocalizationTable[key][locale] or LocalizationTable[key]["default"] or key
 end
