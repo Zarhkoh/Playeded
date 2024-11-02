@@ -26,38 +26,38 @@ local function secondsToTime(seconds)
     local parts = {}
 
     if d == 1 then
-        table.insert(parts, ("%d "):format(d)..GetLocalizedText("DAY"))
+        table.insert(parts, ("%d "):format(d)..Playeded.GetLocalizedText("DAY"))
     end
     if d >= 1 then
-        table.insert(parts, ("%d "):format(d)..GetLocalizedText("DAYS"))
+        table.insert(parts, ("%d "):format(d)..Playeded.GetLocalizedText("DAYS"))
     end
     if h == 1 then
-        table.insert(parts, ("%d "):format(h)..GetLocalizedText("HOUR"))
+        table.insert(parts, ("%d "):format(h)..Playeded.GetLocalizedText("HOUR"))
     end
     if h >= 1 then
-        table.insert(parts, ("%d "):format(h)..GetLocalizedText("HOURS"))
+        table.insert(parts, ("%d "):format(h)..Playeded.GetLocalizedText("HOURS"))
     end
     if m == 1 then
-        table.insert(parts, ("%d "):format(m)..GetLocalizedText("MINUTE"))
+        table.insert(parts, ("%d "):format(m)..Playeded.GetLocalizedText("MINUTE"))
     end
     if m >= 1 then
-        table.insert(parts, ("%d "):format(m)..GetLocalizedText("MINUTES"))
+        table.insert(parts, ("%d "):format(m)..Playeded.GetLocalizedText("MINUTES"))
     end
     if s == 1 then
-        table.insert(parts, ("%d "):format(s)..GetLocalizedText("SECOND"))
+        table.insert(parts, ("%d "):format(s)..Playeded.GetLocalizedText("SECOND"))
     end
     if s >= 1 then
-        table.insert(parts, ("%d "):format(s)..GetLocalizedText("SECONDS"))
+        table.insert(parts, ("%d "):format(s)..Playeded.GetLocalizedText("SECONDS"))
     end
 
     return table.concat(parts, ", ")
 end
 
 local function helpCommand()
-    print(GetLocalizedText("ACCEPTED_COMMANDS_MSG"))
-        print("/playeded all - "..GetLocalizedText("INFO_ALL_COMMAND_MSG"))
-        print("/playeded server - "..GetLocalizedText("INFO_SERVER_COMMAND_MSG"))
-        print("/playeded resetAll - "..GetLocalizedText("INFO_RESETALL_COMMAND_MSG"))
+    print(Playeded.GetLocalizedText("ACCEPTED_COMMANDS_MSG"))
+        print("/playeded all - "..Playeded.GetLocalizedText("INFO_ALL_COMMAND_MSG"))
+        print("/playeded server - "..Playeded.GetLocalizedText("INFO_SERVER_COMMAND_MSG"))
+        print("/playeded resetAll - "..Playeded.GetLocalizedText("INFO_RESETALL_COMMAND_MSG"))
 --      print("/playeded resetCurrent - Supprime le temps de jeu enregistré pour ce personnage.")
 --      print("/playeded resetServer - Réinitialise le temps de jeu enregistré pour ce serveur.")
 end
@@ -66,7 +66,7 @@ local function getPlayedTime(param)
     local totalTime = 0
     for server, characters in pairs(PlayedTotal) do
         if param == "all" or GetRealmName() == server then
-            print(WrapTextInColorCode(GetLocalizedText("SERVER").." : " .. server, "FFB5FFEB"))
+            print(WrapTextInColorCode(Playeded.GetLocalizedText("SERVER").." : " .. server, "FFB5FFEB"))
             for characterID,datas in sortAscendant(characters, function(t,a,b) return t[b].time < t[a].time end) do
             local color = C_ClassColor.GetClassColor(datas.class)
             print("-> " .. WrapTextInColorCode(datas.name, color:GenerateHexColor()) .. " - " .. secondsToTime(datas.time) .. ".")
@@ -76,9 +76,9 @@ local function getPlayedTime(param)
     end
     print(WrapTextInColorCode(
         (param == "all" and 
-            GetLocalizedText("OVERALL_PLAYEDTIME_DISPLAY_MSG"):format(secondsToTime(totalTime)) 
+            Playeded.GetLocalizedText("OVERALL_PLAYEDTIME_DISPLAY_MSG"):format(secondsToTime(totalTime)) 
         or 
-            GetLocalizedText("SERVER_PLAYEDTIME_DISPLAY_MSG"):format(secondsToTime(totalTime), GetRealmName())
+            Playeded.GetLocalizedText("SERVER_PLAYEDTIME_DISPLAY_MSG"):format(secondsToTime(totalTime), GetRealmName())
         ), 
         "ffffff00"
     ))end
@@ -86,7 +86,7 @@ local function getPlayedTime(param)
 local function deletePlayedTime(param)
     if param == "all" then
         PlayedTotal = {}
-        print("Playeded - "..GetLocalizedText("RESETALL_CONFIRMATION_MSG"))
+        print("Playeded - "..Playeded.GetLocalizedText("RESETALL_CONFIRMATION_MSG"))
     end
 end
 

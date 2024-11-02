@@ -1,7 +1,4 @@
-locale = GetLocale()
-
-
-LocalizationTable = {
+local LocalizationTable = {
     NEW_TIME_PLAYED_MSG = {
         default = "New gametime recorded for this character.",
         frFR = "Nouveau temps de jeu enregistré pour ce personnage.",
@@ -213,6 +210,6 @@ LocalizationTable = {
 }
 
 
-function GetLocalizedText(key)
-    return LocalizationTable[key][locale] or LocalizationTable[key]["default"] or key
+function Playeded.GetLocalizedText(key)
+    return PlayededLocalizationTable[key][locale] or PlayededLocalizationTable[key]["default"] or key
 end
