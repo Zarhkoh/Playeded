@@ -103,6 +103,19 @@ PlayededLocalizationTable = {
         koKR = "%s 서버에서 %s를 플레이했습니다.",
         ukUA = "Ви грали %s на сервері %s."
     },
+    SERVER = {
+        default = "server",
+        frFR = "serveur",
+        deDE = "Server",
+        esES = "servidor",
+        esMX = "servidor",
+        ptBR = "servidor",
+        ruRU = "сервер",
+        zhCN = "服务器",
+        zhTW = "伺服器",
+        koKR = "서버",
+        ukUA = "сервер"
+    },
     DAY = {
         default = "day",
         frFR = "jour",
@@ -211,5 +224,5 @@ PlayededLocalizationTable = {
 
 
 function GetPlayededLocalizedText(key)
-    return PlayededLocalizationTable[key][locale] or PlayededLocalizationTable[key]["default"] or key
+    return PlayededLocalizationTable[key][locale] or PlayededLocalizationTable[key]["default"]
 end
