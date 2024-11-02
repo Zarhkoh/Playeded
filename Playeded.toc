@@ -1,7 +1,7 @@
 ## Interface: 110005
 ## Title: Playeded by RAZhkoh
 ## Notes: Mon premier addon de test.
-## Version: 1.0
+## Version: 1.0.1
 ## SavedVariables: PlayedTotal 
 
 Playeded.lua

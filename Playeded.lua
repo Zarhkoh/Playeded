@@ -1,11 +1,13 @@
 local EventFrame = CreateFrame("frame", "PlayededFrame")
+EventFrame:RegisterEvent("ADDON_LOADED")
 EventFrame:RegisterEvent("PLAYER_ENTERING_WORLD")
 EventFrame:RegisterEvent("PLAYER_LEAVING_WORLD")
 EventFrame:RegisterEvent("TIME_PLAYED_MSG")
+locale = GetLocale()
 
 
 local function saveInLocalVariable(realm,playerGUID,class,name,time)
-    if PlayedTotal == nil then 
+    if PlayedTotal == nil then
         PlayedTotal = {}
     end
     if not PlayedTotal[realm] then
@@ -22,9 +24,11 @@ local function saveInLocalVariable(realm,playerGUID,class,name,time)
 end
 
 EventFrame:SetScript("OnEvent", function(self, event, ...)
-    if(event == "PLAYER_ENTERING_WORLD" or event =="PLAYER_LEAVING_WORLD") then RequestTimePlayed() end 
-
-    if(event == "TIME_PLAYED_MSG")then
+    if(event == "ADDON_LOADED" and ... == "WowUkrainizer") then
+        locale = "ukUA"
+    elseif(event == "PLAYER_ENTERING_WORLD" or event =="PLAYER_LEAVING_WORLD") then
+        RequestTimePlayed()
+    elseif(event == "TIME_PLAYED_MSG")then
         local totalTimePlayed = ...
         local playerGUID = UnitGUID("player")
         local name = UnitName("player")
