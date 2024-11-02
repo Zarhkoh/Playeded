@@ -17,4 +17,4 @@
 
 Playeded.lua
 Playeded_Commands.lua
-Plyeded_Localization.lua
+Playeded_Localization.lua
