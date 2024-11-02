@@ -1,4 +1,4 @@
-local PlayededLocalizationTable = {
+PlayededLocalizationTable = {
     NEW_TIME_PLAYED_MSG = {
         default = "New gametime recorded for this character.",
         frFR = "Nouveau temps de jeu enregistré pour ce personnage.",

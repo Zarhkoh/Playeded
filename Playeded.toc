@@ -1,6 +1,17 @@
 ## Interface: 110005
 ## Title: Playeded by RAZhkoh
-## Notes: Mon premier addon de test.
+## Notes: Shows your overall /played time.
+## Notes-frFR: Vous informe de votre temps de jeu total.
+## Notes-deDE: Informiert Sie über Ihre gesamte Spielzeit.
+## Notes-esES: Te informa sobre el tiempo total jugado.
+## Notes-esMX: Te informa sobre el tiempo total jugado.
+## Notes-ptBR: Informa você sobre o tempo total jogado.
+## Notes-itIT: Ti informa sul tempo totale di gioco.
+## Notes-koKR: 전체 게임 시간을 알려줍니다.
+## Notes-ruRU: Сообщает вам об общем времени игры.
+## Notes-zhCN: 让你了解总体游戏时间。
+## Notes-zhTW: 讓您知道總遊玩時間。
+
 ## Version: 1.0.4
 ## SavedVariables: PlayedTotal 
 
