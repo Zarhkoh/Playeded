@@ -20,7 +20,7 @@ local function saveInLocalVariable(realm,playerGUID,class,name,time)
     PlayedTotal[realm][playerGUID].time = time
     PlayedTotal[realm][playerGUID].lastregistered = C_DateAndTime.GetCurrentCalendarTime()
     PlayedTotal[realm][playerGUID].class = class
-    print(GetLocalizedText("NEW_TIME_PLAYED_MSG"))
+    print(GetPlayededLocalizedText("NEW_TIME_PLAYED_MSG"))
 end
 
 EventFrame:SetScript("OnEvent", function(self, event, ...)
