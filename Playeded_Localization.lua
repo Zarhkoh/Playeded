@@ -211,6 +211,5 @@ local PlayededLocalizationTable = {
 
 
 function GetPlayededLocalizedText(key)
-    print(key)
     return PlayededLocalizationTable[key][locale] or PlayededLocalizationTable[key]["default"] or key
 end
