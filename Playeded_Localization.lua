@@ -10,7 +10,7 @@ PlayededLocalizationTable = {
         zhCN = "为这个角色记录的新游戏时间。",
         zhTW = "為這個角色記錄的新遊戲時間。",
         koKR = "이 캐릭터에 대해 새 게임 시간을 기록했습니다.",
-        ukUA = "Записано новий час гри для цього персонажа."
+        ukUA = "Записано новий час гри на цьому персонажі."
     },
     ACCEPTED_COMMANDS_MSG = {
         default = "Allowed commands for Playeded :",
@@ -23,7 +23,7 @@ PlayededLocalizationTable = {
         zhCN = "Playeded 的允许命令：",
         zhTW = "Playeded 的允許命令：",
         koKR = "Playeded에 대한 허용된 명령어:",
-        ukUA = "Дозволені команди для Playeded:"
+        ukUA = "Доступні команди для Playeded:"
     },
     INFO_ALL_COMMAND_MSG = {
         default = "Display overall gametime.",
@@ -140,7 +140,7 @@ PlayededLocalizationTable = {
         zhCN = "天",
         zhTW = "天",
         koKR = "일",
-        ukUA = "дні"
+        ukUA = "д"
     },
     HOUR = {
         default = "hour",
@@ -153,7 +153,7 @@ PlayededLocalizationTable = {
         zhCN = "小时",
         zhTW = "小時",
         koKR = "시간",
-        ukUA = "година"
+        ukUA = "годину"
     },
     HOURS = {
         default = "hours",
@@ -166,7 +166,7 @@ PlayededLocalizationTable = {
         zhCN = "小时",
         zhTW = "小時",
         koKR = "시간",
-        ukUA = "годин"
+        ukUA = "год"
     },
     MINUTE = {
         default = "minute",
@@ -179,7 +179,7 @@ PlayededLocalizationTable = {
         zhCN = "分钟",
         zhTW = "分鐘",
         koKR = "분",
-        ukUA = "хвилина"
+        ukUA = "хвилину"
     },
     MINUTES = {
         default = "minutes",
@@ -192,7 +192,7 @@ PlayededLocalizationTable = {
         zhCN = "分钟",
         zhTW = "分鐘",
         koKR = "분",
-        ukUA = "хвилин"
+        ukUA = "хв"
     },
     SECOND = {
         default = "second",
@@ -205,7 +205,7 @@ PlayededLocalizationTable = {
         zhCN = "秒",
         zhTW = "秒",
         koKR = "초",
-        ukUA = "секунда"
+        ukUA = "секунду"
     },
     SECONDS = {
         default = "seconds",
@@ -218,7 +218,7 @@ PlayededLocalizationTable = {
         zhCN = "秒",
         zhTW = "秒",
         koKR = "초",
-        ukUA = "секунд"
+        ukUA = "сек"
     }
 }
 
