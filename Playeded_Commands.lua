@@ -68,8 +68,16 @@ local function getPlayedTime(param)
         if param == "all" or GetRealmName() == server then
             print(WrapTextInColorCode(GetPlayededLocalizedText("SERVER").." : " .. server, "FFB5FFEB"))
             for characterID,datas in sortAscendant(characters, function(t,a,b) return t[b].time < t[a].time end) do
-            local color = C_ClassColor.GetClassColor(datas.class)
-            print("-> " .. WrapTextInColorCode(datas.name, color:GenerateHexColor()) .. " - " .. secondsToTime(datas.time) .. ".")
+                local color;
+                -- Retail specific
+                if C_ClassColor and C_ClassColor.getClassColor then
+                    color = C_ClassColor.GetClassColor(datas.class):GenerateHexColor()
+                else
+                -- Classic specific
+                    local _,_,_,classColor = GetClassColor(datas.class)
+                    color = classColor
+                end
+            print("-> " .. WrapTextInColorCode(datas.name, color) .. " - " .. secondsToTime(datas.time) .. ".")
             totalTime=totalTime + datas.time
             end
         end
