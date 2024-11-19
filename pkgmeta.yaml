@@ -4,3 +4,7 @@ game-versions:
   - retail
   - classic
   - cata
+file-name-patterns:
+  - Playeded-Retail.toc: retail
+  - Playeded-Classic.toc: classic
+  - Playeded-Cata.toc: cata
