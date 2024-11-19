@@ -12,7 +12,7 @@
 ## Notes-zhCN: 让你了解总体游戏时间。
 ## Notes-zhTW: 讓您知道總遊玩時間。
 
-## Version: 1.0.6.3
+## Version: @project-version@
 ## SavedVariables: PlayedTotal 
 
 Playeded.lua

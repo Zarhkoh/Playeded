@@ -1,4 +1,4 @@
-## Interface: 11504
+## Interface: 40401
 ## Title: Playeded by RAZhkoh
 ## Notes: Shows your overall /played time.
 ## Notes-frFR: Vous informe de votre temps de jeu total.
@@ -12,7 +12,7 @@
 ## Notes-zhCN: 让你了解总体游戏时间。
 ## Notes-zhTW: 讓您知道總遊玩時間。
 
-## Version: 1.0.6.3
+## Version: @project-version@
 ## SavedVariables: PlayedTotal 
 
 Playeded.lua
