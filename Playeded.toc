@@ -1,4 +1,4 @@
-## Interface: 110005
+## Interface: 110007
 ## Title: Playeded by RAZhkoh
 ## Notes: Shows your overall /played time.
 ## Notes-frFR: Vous informe de votre temps de jeu total.
