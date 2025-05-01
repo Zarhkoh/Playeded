@@ -16,7 +16,7 @@
 ## SavedVariables: PlayedTotal
 
 ## X-Curse-Project-ID: 663774
-## X-WoWI-ID: 26927
+## X-WoWI-ID: 26928
 ## X-Wago-ID: 5NRe9pG3
 
 Playeded.lua
