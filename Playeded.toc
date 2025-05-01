@@ -13,7 +13,11 @@
 ## Notes-zhTW: 讓您知道總遊玩時間。
 
 ## Version: @project-version@
-## SavedVariables: PlayedTotal 
+## SavedVariables: PlayedTotal
+
+## X-Curse-Project-ID: 663774
+## X-WoWI-ID: 0
+## X-Wago-ID: 5NRe9pG3
 
 Playeded.lua
 Playeded_Commands.lua
