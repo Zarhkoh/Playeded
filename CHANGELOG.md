@@ -10,3 +10,6 @@
 
 ### [1.1.9] - 2025-05-01
 - Adding GitHub Actions
+
+### [1.1.9.1] - 2026-01-31
+- New WoW game versions
